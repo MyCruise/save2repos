@@ -1,0 +1,12 @@
+[Unit]
+Description=oled
+
+[Service]
+# Command to execute when the service is started
+ExecStart=/usr/bin/python3 /usr/local/bin/oled.py
+Restart=always
+Type=simple
+User=jabberwocky
+
+[Install]
+WantedBy=multi-user.target
