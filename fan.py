@@ -1,3 +1,4 @@
+import os
 import time
 
 
@@ -19,9 +20,10 @@ def fan():
         thermal = str(int(thermal / 100 * 255))
         #    print(thermal)
 
-        fw = open("/sys/devices/pwm-fan/target_pwm", "w")
-        fw.write(thermal)
-        fw.close()
+        os.system(f"sh -c \"echo {thermal} > /sys/devices/pwm-fan/target_pwm\"")
+        # fw = open("/sys/devices/pwm-fan/target_pwm", "w")
+        # fw.write(thermal)
+        # fw.close()
 
         time.sleep(30)
 
