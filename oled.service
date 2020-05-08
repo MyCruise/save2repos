@@ -3,9 +3,9 @@ Description=oled
 
 [Service]
 # Command to execute when the service is started
-ExecStart=/usr/bin/python3 /usr/local/bin/oled.py
 Restart=always
 Type=simple
+ExecStart=/usr/local/bin/oled.sh
 User=jabberwocky
 
 [Install]
